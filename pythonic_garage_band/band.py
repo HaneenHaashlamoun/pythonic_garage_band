@@ -3,6 +3,7 @@ from abc import abstractmethod, ABC
 
 class Band():
     name = []
+    bands = []
     members = []
 
     # Constructor
@@ -23,10 +24,10 @@ class Band():
 
     # class method
     def play_solos(self):
-        result = ''
-        for i in Band.members:
-            result += f'{i.play_solo()}\n'
-        return result
+        solos = []
+        for member in self.members:
+            solos.append(member.play_solo())
+        return(solos)
 
     @classmethod
     def to_list(cls):
